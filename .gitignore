@@ -1,0 +1,9 @@
+#### exclude input data files
+# zipped data
+data.zip
+# unzipped data
+UCI HAR Dataset
+
+# exclude R Studio files
+.RData
+.Rhistory
