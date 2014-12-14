@@ -13,8 +13,9 @@
 # These libraries must be already installed in order to run this script successfully:
 library(data.table)
 library(stringr)
+library(reshape2)
 
-## download and unzip the input data
+##### download and unzip the input data
 zipfileurl="https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip"
 zipfilelocalname="data.zip"
 
@@ -25,6 +26,7 @@ if (!file.exists(zipfilelocalname)) {
     unzip(zipfile = zipfilelocalname)
 }
 
+##### Load feature file
 # The "UCI HAR Dataset/features.txt" file lists the 561 columns in
 # the training and test set. Among these we are interested only in the means
 # and standard deviations. It's convenient to load the features.txt in a data.table
@@ -43,14 +45,26 @@ features <- data.table(read.table(
 # - if OriginalName="angle(tBodyGyroMean,gravityMean)" then Type="angle"
 features$Type <- factor(x=gsub(x=features$OriginalName, 
                                       pattern="(^[^-]*-)|([(]+.*)", replacement="")
-                               )# add another column with the name of the feature that will be used in the 
+                               )
 
-# Keep only the features of the types mean and standard deviation.
-# Let's Keep the meanFreq type too, as it appears to contain a mean.
+# Will keep only the features of the types mean, std (standard deviation), meanFreq (that 
+# seems to contain a mean value).
 wanted_features <- features[Type %in% c("mean", "std", "meanFreq"), ]
 
-# Load activity labels needed for TASK #3 (Use descriptive activity names to 
-# name the activities in the data set)
+# Prepare names for the headers of the data set (task #4)
+# e.g. if feature ID = 1 and OriginalName="tBodyAcc-mean()-X" then 
+#  Name="F001.tBodyAcc.mean.X".
+# The feature ID is inserted in the name so it's easier to trace it
+# back to the original data set.
+wanted_features$HeaderName <- paste("F", 
+                                    str_pad(string=wanted_features$ID, width=3, pad="0"),
+                                    '.',
+                                    make.names(str_replace(wanted_features$OriginalName, "\\(\\)", "")),
+                                    sep="")
+
+##### Load activities labels
+# Needed for TASK #3 (Use descriptive activity names to name the activities 
+# in the data set)
 activity_labels <- data.table(read.table(
                     file="UCI HAR Dataset/activity_labels.txt",
                     sep=" ",
@@ -59,16 +73,9 @@ activity_labels <- data.table(read.table(
                     col.names=c("ID", "Label")    
                     ))
 
-# header of the data set.
-# e.g. if feature ID = 1 and OriginalName="tBodyAcc-mean()-X" then 
-#  Name="F001
-wanted_features$Name <- paste("F", 
-                       str_pad(string=wanted_features$ID, width=3, pad="0"),
-                       '.',
-                       make.names(str_replace(wanted_features$OriginalName, "\\(\\)", "")),
-                       sep="")
 
-# TASK #1: Merge the training and the test sets to create one data set.
+##### Load data sets, filter wanted columns and set names
+# TASK #1 Starts: Merge the training and the test sets to create one data set.
 # The resulting data set will be stored in the "X" variable
 X <- data.table()
 
@@ -88,7 +95,7 @@ for (pattern in c("train", "test")) {
     # These are filtered using the feature IDs in the wanted_features table.
     X_temp <- X_temp[, wanted_features$ID, with=FALSE]
     # TASK 4: Appropriately labels the data set with descriptive variable names.
-    setnames(X_temp, wanted_features$Name)
+    setnames(X_temp, wanted_features$HeaderName)
 
     # load activities related to each experiment
     filename <- paste("UCI HAR Dataset/", pattern, "/y_", pattern, ".txt", sep="")
@@ -99,16 +106,6 @@ for (pattern in c("train", "test")) {
                                     col.names=c("ActivityID")
                                 ))
     # TASK 3: Uses descriptive activity names to name the activities in the data set
-    # To accomplish this, let's transform activities_train from integers to 
-    #  factors and add them to X_temp. The mapping between activity IDs and
-    # activity names is specified in the activity_labels.txt file, it's repeated
-    # here for convenience:
-    # 1 => WALKING
-    # 2 => WALKING_UPSTAIRS
-    # 3 => WALKING_DOWNSTAIRS
-    # 4 => SITTING
-    # 5 => STANDING
-    # 6 => LAYING
     activities_temp$Activity <- factor(
                                 x=activities_temp$ActivityID, 
                                 levels= activity_labels$ID,
@@ -120,21 +117,29 @@ for (pattern in c("train", "test")) {
     print(paste("Loading file ", filename))
     subjects_temp <- data.table(read.table(filename, 
                    header=F, 
-                   colClasses="integer",
+                   colClasses="factor",
                    col.names=c("SubjectID")
                 ))
-    #X_temp$SubjectID <- subsjects_temp
 
     # concatenate the columns with subjects, activities, means + std.devs to
     # obtain one data set
     X_temp <- cbind(subjects_temp, activities_temp[,.(Activity)], X_temp)
     # add the rows of X_temp to the data set "X" that aggregates train and test data
     X <- rbindlist(list(X, X_temp))
-    
-    # NOT REQUIRED: add a factor column so that each row can be traced back to the original dataset (train o test)
-    #X_temp$SubDataSet <- factor(x=pattern)    
-    
-    #rm(X_temp)
-    #rm(subjects_temp)
-    #rm(activities_temp)
 }
+
+##### TASK 5: From the data set in step 4, creates a second, independent 
+# tidy data set with the average of each variable for each activity and each subject.
+X_melted <- melt(data=X, 
+                 id.vars=c("SubjectID", "Activity"), 
+                 variable.name="var",
+                 value.name="value")
+X_mean <- dcast(data=X_melted, 
+                formula=SubjectID + Activity ~ var,
+                fun=mean)
+
+# Write tidy data to "tidydata_means.txt" file. It can be read back into R with
+# the command: data <- read.table("tidydata_means.txt", header=TRUE)
+write.table(x=X_mean,
+            file="tidydata_with_means.txt",
+            row.name=FALSE)
