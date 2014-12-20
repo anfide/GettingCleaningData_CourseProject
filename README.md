@@ -3,7 +3,7 @@
 
 This repository contains the project for the Coursera "Getting and Cleaning Data" course (December 2014 iteration).
 
-The course requires to provide:
+The projects requires to provide these files:
 * analysis_run.R, R script file that performs the data manipulation
 * README.md (this file) that explains how the script works
 * CodeBook.md that describes the output variables
@@ -93,5 +93,6 @@ The scripts operates as follows. The data.table library is used for data manipul
 * at this point there is an X data.table containing the variables: subject ID; activity label; 79 variables with mean or standard deviation features. To perform task #5, X goes through the melt() and dcast() functions. In the melt() call, subject ID and activity label go in the id.vars parameter; all the other variables are "melted" to convert the data set to "long" form. The dcast() call processes the melted data, converting it back to "wide" form and applying the mean() function to all the features except subject id and activity label.
 * the output file is written using the write.table() function. It can be read back into R with a call like 
 
-    mydata = read.table("tidydata_with_means.txt", header=TRUE)
-
+<pre><code>
+  mydata = read.table("tidydata_with_means.txt", header=TRUE)
+</code></pre>
