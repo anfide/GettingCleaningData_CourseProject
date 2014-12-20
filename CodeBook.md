@@ -83,91 +83,92 @@ The variables 3-81 are averages computed for the combination of subject + activi
 
 <table>
  <tr>
-  <td>ID</td>
-  <td>Name</td>
-  <td>Description</td>
-  <td>Range of Values</td>
+  <td><b>ID</b></td>
+  <td><b>Name</b></td>
+  <td><b>Description</b></td>
+  <td><b>Range of Values</b></td>
  </tr>
 
 <tr><td>1	</td><td>SubjectID                              </td><td> ID of the subject who performed the activity </td> <td> 1-30 </td> </tr>
 <tr><td>2	</td><td>Activity                               </td><td> Activity that was performed and monitored </td> <td>One of the following: WALKING; WALKING_UPSTAIRS; WALKING_DOWNSTAIRS; SITTING; STANDING; LAYING </td> </tr>
-<tr><td>3	</td><td>Time.BodyAcc.mean.X                    </td><td></td> <td>Normalized to the [-1, 1] interval </td> </tr>
-<tr><td>4	</td><td>Time.BodyAcc.mean.Y                    </td><td></td> <td>Normalized to the [-1, 1] interval </td> </tr>
-<tr><td>5	</td><td>Time.BodyAcc.mean.Z                    </td><td></td> <td>Normalized to the [-1, 1] interval </td> </tr>
-<tr><td>6	</td><td>Time.BodyAcc.stddev.X                  </td><td></td> <td>Normalized to the [-1, 1] interval </td> </tr>
-<tr><td>7	</td><td>Time.BodyAcc.stddev.Y                  </td><td></td> <td>Normalized to the [-1, 1] interval </td> </tr>
-<tr><td>8	</td><td>Time.BodyAcc.stddev.Z                  </td><td></td> <td>Normalized to the [-1, 1] interval </td> </tr>
-<tr><td>9	</td><td>Time.GravityAcc.mean.X                 </td><td></td> <td>Normalized to the [-1, 1] interval </td> </tr>
-<tr><td>10	</td><td>Time.GravityAcc.mean.Y                 </td><td></td> <td>Normalized to the [-1, 1] interval </td> </tr>
-<tr><td>11	</td><td>Time.GravityAcc.mean.Z                 </td><td></td> <td>Normalized to the [-1, 1] interval </td> </tr>
-<tr><td>12	</td><td>Time.GravityAcc.stddev.X               </td><td></td> <td>Normalized to the [-1, 1] interval </td> </tr>
-<tr><td>13	</td><td>Time.GravityAcc.stddev.Y               </td><td></td> <td>Normalized to the [-1, 1] interval </td> </tr>
-<tr><td>14	</td><td>Time.GravityAcc.stddev.Z               </td><td></td> <td>Normalized to the [-1, 1] interval </td> </tr>
-<tr><td>15	</td><td>Time.BodyAccJerk.mean.X                </td><td></td> <td>Normalized to the [-1, 1] interval </td> </tr>
-<tr><td>16	</td><td>Time.BodyAccJerk.mean.Y                </td><td></td> <td>Normalized to the [-1, 1] interval </td> </tr>
-<tr><td>17	</td><td>Time.BodyAccJerk.mean.Z                </td><td></td> <td>Normalized to the [-1, 1] interval </td> </tr>
-<tr><td>18	</td><td>Time.BodyAccJerk.stddev.X              </td><td></td> <td>Normalized to the [-1, 1] interval </td> </tr>
-<tr><td>19	</td><td>Time.BodyAccJerk.stddev.Y              </td><td></td> <td>Normalized to the [-1, 1] interval </td> </tr>
-<tr><td>20	</td><td>Time.BodyAccJerk.stddev.Z              </td><td></td> <td>Normalized to the [-1, 1] interval </td> </tr>
-<tr><td>21	</td><td>Time.BodyGyro.mean.X                   </td><td></td> <td>Normalized to the [-1, 1] interval </td> </tr>
-<tr><td>22	</td><td>Time.BodyGyro.mean.Y                   </td><td></td> <td>Normalized to the [-1, 1] interval </td> </tr>
-<tr><td>23	</td><td>Time.BodyGyro.mean.Z                   </td><td></td> <td>Normalized to the [-1, 1] interval </td> </tr>
-<tr><td>24	</td><td>Time.BodyGyro.stddev.X                 </td><td></td> <td>Normalized to the [-1, 1] interval </td> </tr>
-<tr><td>25	</td><td>Time.BodyGyro.stddev.Y                 </td><td></td> <td>Normalized to the [-1, 1] interval </td> </tr>
-<tr><td>26	</td><td>Time.BodyGyro.stddev.Z                 </td><td></td> <td>Normalized to the [-1, 1] interval </td> </tr>
-<tr><td>27	</td><td>Time.BodyGyroJerk.mean.X               </td><td></td> <td>Normalized to the [-1, 1] interval </td> </tr>
-<tr><td>28	</td><td>Time.BodyGyroJerk.mean.Y               </td><td></td> <td>Normalized to the [-1, 1] interval </td> </tr>
-<tr><td>29	</td><td>Time.BodyGyroJerk.mean.Z               </td><td></td> <td>Normalized to the [-1, 1] interval </td> </tr>
-<tr><td>30	</td><td>Time.BodyGyroJerk.stddev.X             </td><td></td> <td>Normalized to the [-1, 1] interval </td> </tr>
-<tr><td>31	</td><td>Time.BodyGyroJerk.stddev.Y             </td><td></td> <td>Normalized to the [-1, 1] interval </td> </tr>
-<tr><td>32	</td><td>Time.BodyGyroJerk.stddev.Z             </td><td></td> <td>Normalized to the [-1, 1] interval </td> </tr>
-<tr><td>33	</td><td>Time.BodyAccMag.mean                   </td><td></td> <td>Normalized to the [-1, 1] interval </td> </tr>
-<tr><td>34	</td><td>Time.BodyAccMag.stddev                 </td><td></td> <td>Normalized to the [-1, 1] interval </td> </tr>
-<tr><td>35	</td><td>Time.GravityAccMag.mean                </td><td></td> <td>Normalized to the [-1, 1] interval </td> </tr>
-<tr><td>36	</td><td>Time.GravityAccMag.stddev              </td><td></td> <td>Normalized to the [-1, 1] interval </td> </tr>
-<tr><td>37	</td><td>Time.BodyAccJerkMag.mean               </td><td></td> <td>Normalized to the [-1, 1] interval </td> </tr>
-<tr><td>38	</td><td>Time.BodyAccJerkMag.stddev             </td><td></td> <td>Normalized to the [-1, 1] interval </td> </tr>
-<tr><td>39	</td><td>Time.BodyGyroMag.mean                  </td><td></td> <td>Normalized to the [-1, 1] interval </td> </tr>
-<tr><td>40	</td><td>Time.BodyGyroMag.stddev                </td><td></td> <td>Normalized to the [-1, 1] interval </td> </tr>
-<tr><td>41	</td><td>Time.BodyGyroJerkMag.mean              </td><td></td> <td>Normalized to the [-1, 1] interval </td> </tr>
-<tr><td>42	</td><td>Time.BodyGyroJerkMag.stddev            </td><td></td> <td>Normalized to the [-1, 1] interval </td> </tr>
-<tr><td>43	</td><td>Freq.BodyAcc.mean.X                    </td><td></td> <td>Normalized to the [-1, 1] interval </td> </tr>
-<tr><td>44	</td><td>Freq.BodyAcc.mean.Y                    </td><td></td> <td>Normalized to the [-1, 1] interval </td> </tr>
-<tr><td>45	</td><td>Freq.BodyAcc.mean.Z                    </td><td></td> <td>Normalized to the [-1, 1] interval </td> </tr>
-<tr><td>46	</td><td>Freq.BodyAcc.stddev.X                  </td><td></td> <td>Normalized to the [-1, 1] interval </td> </tr>
-<tr><td>47	</td><td>Freq.BodyAcc.stddev.Y                  </td><td></td> <td>Normalized to the [-1, 1] interval </td> </tr>
-<tr><td>48	</td><td>Freq.BodyAcc.stddev.Z                  </td><td></td> <td>Normalized to the [-1, 1] interval </td> </tr>
-<tr><td>49	</td><td>Freq.BodyAcc.meanFreq.X                </td><td></td> <td>Normalized to the [-1, 1] interval </td> </tr>
-<tr><td>50	</td><td>Freq.BodyAcc.meanFreq.Y                </td><td></td> <td>Normalized to the [-1, 1] interval </td> </tr>
-<tr><td>51	</td><td>Freq.BodyAcc.meanFreq.Z                </td><td></td> <td>Normalized to the [-1, 1] interval </td> </tr>
-<tr><td>52	</td><td>Freq.BodyAccJerk.mean.X                </td><td></td> <td>Normalized to the [-1, 1] interval </td> </tr>
-<tr><td>53	</td><td>Freq.BodyAccJerk.mean.Y                </td><td></td> <td>Normalized to the [-1, 1] interval </td> </tr>
-<tr><td>54	</td><td>Freq.BodyAccJerk.mean.Z                </td><td></td> <td>Normalized to the [-1, 1] interval </td> </tr>
-<tr><td>55	</td><td>Freq.BodyAccJerk.stddev.X              </td><td></td> <td>Normalized to the [-1, 1] interval </td> </tr>
-<tr><td>56	</td><td>Freq.BodyAccJerk.stddev.Y              </td><td></td> <td>Normalized to the [-1, 1] interval </td> </tr>
-<tr><td>57	</td><td>Freq.BodyAccJerk.stddev.Z              </td><td></td> <td>Normalized to the [-1, 1] interval </td> </tr>
-<tr><td>58	</td><td>Freq.BodyAccJerk.meanFreq.X            </td><td></td> <td>Normalized to the [-1, 1] interval </td> </tr>
-<tr><td>59	</td><td>Freq.BodyAccJerk.meanFreq.Y            </td><td></td> <td>Normalized to the [-1, 1] interval </td> </tr>
-<tr><td>60	</td><td>Freq.BodyAccJerk.meanFreq.Z            </td><td></td> <td>Normalized to the [-1, 1] interval </td> </tr>
-<tr><td>61	</td><td>Freq.BodyGyro.mean.X                   </td><td></td> <td>Normalized to the [-1, 1] interval </td> </tr>
-<tr><td>62	</td><td>Freq.BodyGyro.mean.Y                   </td><td></td> <td>Normalized to the [-1, 1] interval </td> </tr>
-<tr><td>63	</td><td>Freq.BodyGyro.mean.Z                   </td><td></td> <td>Normalized to the [-1, 1] interval </td> </tr>
-<tr><td>64	</td><td>Freq.BodyGyro.stddev.X                 </td><td></td> <td>Normalized to the [-1, 1] interval </td> </tr>
-<tr><td>65	</td><td>Freq.BodyGyro.stddev.Y                 </td><td></td> <td>Normalized to the [-1, 1] interval </td> </tr>
-<tr><td>66	</td><td>Freq.BodyGyro.stddev.Z                 </td><td></td> <td>Normalized to the [-1, 1] interval </td> </tr>
-<tr><td>67	</td><td>Freq.BodyGyro.meanFreq.X               </td><td></td> <td>Normalized to the [-1, 1] interval </td> </tr>
-<tr><td>68	</td><td>Freq.BodyGyro.meanFreq.Y               </td><td></td> <td>Normalized to the [-1, 1] interval </td> </tr>
-<tr><td>69	</td><td>Freq.BodyGyro.meanFreq.Z               </td><td></td> <td>Normalized to the [-1, 1] interval </td> </tr>
-<tr><td>70	</td><td>Freq.BodyAccMag.mean                   </td><td></td> <td>Normalized to the [-1, 1] interval </td> </tr>
-<tr><td>71	</td><td>Freq.BodyAccMag.stddev                 </td><td></td> <td>Normalized to the [-1, 1] interval </td> </tr>
-<tr><td>72	</td><td>Freq.BodyAccMag.meanFreq               </td><td></td> <td>Normalized to the [-1, 1] interval </td> </tr>
-<tr><td>73	</td><td>Freq.BodyAccJerkMag.mean               </td><td></td> <td>Normalized to the [-1, 1] interval </td> </tr>
-<tr><td>74	</td><td>Freq.BodyAccJerkMag.stddev             </td><td></td> <td>Normalized to the [-1, 1] interval </td> </tr>
-<tr><td>75	</td><td>Freq.BodyAccJerkMag.meanFreq           </td><td></td> <td>Normalized to the [-1, 1] interval </td> </tr>
-<tr><td>76	</td><td>Freq.BodyGyroMag.mean                  </td><td></td> <td>Normalized to the [-1, 1] interval </td> </tr>
-<tr><td>77	</td><td>Freq.BodyGyroMag.stddev                </td><td></td> <td>Normalized to the [-1, 1] interval </td> </tr>
-<tr><td>78	</td><td>Freq.BodyGyroMag.meanFreq              </td><td></td> <td>Normalized to the [-1, 1] interval </td> </tr>
-<tr><td>79	</td><td>Freq.BodyGyroJerkMag.mean              </td><td></td> <td>Normalized to the [-1, 1] interval </td> </tr>
-<tr><td>80	</td><td>Freq.BodyGyroJerkMag.stddev            </td><td></td> <td>Normalized to the [-1, 1] interval </td> </tr>
-<tr><td>81	</td><td>Freq.BodyGyroJerkMag.meanFreq          </td><td></td> <td>Normalized to the [-1, 1] interval </td> </tr>
+<tr><td>3	</td><td>Time.BodyAcc.mean.X                    </td><td>Mean time domain body acceleration - x coordinate</td> <td>Normalized to the [-1, 1] interval </td> </tr>
+<tr><td>4	</td><td>Time.BodyAcc.mean.Y                    </td><td>Mean time domain body acceleration - y coordinate</td> <td>Normalized to the [-1, 1] interval </td> </tr>
+<tr><td>5	</td><td>Time.BodyAcc.mean.Z                    </td><td>Mean time domain body acceleration - z coordinate</td> <td>Normalized to the [-1, 1] interval </td> </tr>
+<tr><td>6	</td><td>Time.BodyAcc.stddev.X                  </td><td>Standard deviation of time domain body acceleration - x coordinate</td> <td>Normalized to the [-1, 1] interval </td> </tr>
+<tr><td>7	</td><td>Time.BodyAcc.stddev.Y                  </td><td>Standard deviation of time domain body acceleration - y coordinate</td> <td>Normalized to the [-1, 1] interval </td> </tr>
+<tr><td>8	</td><td>Time.BodyAcc.stddev.Z                  </td><td>Standard deviation of time domain body acceleration - z coordinate</td> <td>Normalized to the [-1, 1] interval </td> </tr>
+<tr><td>9	</td><td>Time.GravityAcc.mean.X                 </td><td>Mean time domain gravity acceleration - x coordinate</td> <td>Normalized to the [-1, 1] interval </td> </tr>
+<tr><td>10	</td><td>Time.GravityAcc.mean.Y                 </td><td>Mean time domain gravity acceleration - y coordinate</td> <td>Normalized to the [-1, 1] interval </td> </tr>
+<tr><td>11	</td><td>Time.GravityAcc.mean.Z                 </td><td>Mean time domain gravity acceleration - z coordinate</td> <td>Normalized to the [-1, 1] interval </td> </tr>
+<tr><td>12	</td><td>Time.GravityAcc.stddev.X               </td><td>Standard deviation of time domain gravity acceleration - x coordinate</td> <td>Normalized to the [-1, 1] interval </td> </tr>
+<tr><td>13	</td><td>Time.GravityAcc.stddev.Y               </td><td>Standard deviation of time domain gravity acceleration - y coordinate</td> <td>Normalized to the [-1, 1] interval </td> </tr>
+<tr><td>14	</td><td>Time.GravityAcc.stddev.Z               </td><td>Standard deviation of time domain gravity acceleration - z coordinate</td> <td>Normalized to the [-1, 1] interval </td> </tr>
+<tr><td>15	</td><td>Time.BodyAccJerk.mean.X                </td><td>Mean time domain body jerk - x coordinate</td> <td>Normalized to the [-1, 1] interval </td> </tr>
+<tr><td>16	</td><td>Time.BodyAccJerk.mean.Y                </td><td>Mean time domain body jerk - y coordinate</td> <td>Normalized to the [-1, 1] interval </td> </tr>
+<tr><td>17	</td><td>Time.BodyAccJerk.mean.Z                </td><td>Mean time domain body jerk - z coordinate</td> <td>Normalized to the [-1, 1] interval </td> </tr>
+<tr><td>18	</td><td>Time.BodyAccJerk.stddev.X              </td><td>Standard deviation of time domain body jerk - x coordinate</td> <td>Normalized to the [-1, 1] interval </td> </tr>
+<tr><td>19	</td><td>Time.BodyAccJerk.stddev.Y              </td><td>Standard deviation of time domain body jerk - y coordinate</td> <td>Normalized to the [-1, 1] interval </td> </tr>
+<tr><td>20	</td><td>Time.BodyAccJerk.stddev.Z              </td><td>Standard deviation of time domain body jerk - z coordinate</td> <td>Normalized to the [-1, 1] interval </td> </tr>
+<tr><td>21	</td><td>Time.BodyGyro.mean.X                   </td><td>Mean time domain angular velocity - x coordinate</td> <td>Normalized to the [-1, 1] interval </td> </tr>
+<tr><td>22	</td><td>Time.BodyGyro.mean.Y                   </td><td>Mean time domain angular velocity - y coordinate</td> <td>Normalized to the [-1, 1] interval </td> </tr>
+<tr><td>23	</td><td>Time.BodyGyro.mean.Z                   </td><td>Mean time domain angular velocity - z coordinate</td> <td>Normalized to the [-1, 1] interval </td> </tr>
+<tr><td>24	</td><td>Time.BodyGyro.stddev.X                 </td><td>Standard deviation of time domain angular velocity - x coordinate</td> <td>Normalized to the [-1, 1] interval </td> </tr>
+<tr><td>25	</td><td>Time.BodyGyro.stddev.Y                 </td><td>Standard deviation of time domain angular velocity - y coordinate</td> <td>Normalized to the [-1, 1] interval </td> </tr>
+<tr><td>26	</td><td>Time.BodyGyro.stddev.Z                 </td><td>Standard deviation of time domain angular velocity - z coordinate</td> <td>Normalized to the [-1, 1] interval </td> </tr>
+<tr><td>27	</td><td>Time.BodyGyroJerk.mean.X               </td><td>Mean time domain angular jerk - x coordinate</td> <td>Normalized to the [-1, 1] interval </td> </tr>
+<tr><td>28	</td><td>Time.BodyGyroJerk.mean.Y               </td><td>Mean time domain angular jerk - y coordinate</td> <td>Normalized to the [-1, 1] interval </td> </tr>
+<tr><td>29	</td><td>Time.BodyGyroJerk.mean.Z               </td><td>Mean time domain angular jerk - z coordinate</td> <td>Normalized to the [-1, 1] interval </td> </tr>
+<tr><td>30	</td><td>Time.BodyGyroJerk.stddev.X             </td><td>Standard deviation of time domain angular jerk - x coordinate</td> <td>Normalized to the [-1, 1] interval </td> </tr>
+<tr><td>31	</td><td>Time.BodyGyroJerk.stddev.Y             </td><td>Standard deviation of time domain angular jerk - y coordinate</td> <td>Normalized to the [-1, 1] interval </td> </tr>
+<tr><td>32	</td><td>Time.BodyGyroJerk.stddev.Z             </td><td>Standard deviation of time domain angular jerk - z coordinate</td> <td>Normalized to the [-1, 1] interval </td> </tr>
+<tr><td>33	</td><td>Time.BodyAccMag.mean                   </td><td>Mean magnitude of time domain body acceleration</td> <td>Normalized to the [-1, 1] interval </td> </tr>
+<tr><td>34	</td><td>Time.BodyAccMag.stddev                 </td><td>Standard deviation of magnitude of time domain body acceleration</td> <td>Normalized to the [-1, 1] interval </td> </tr>
+<tr><td>35	</td><td>Time.GravityAccMag.mean                </td><td>Mean magnitude of time domain gravity acceleration</td> <td>Normalized to the [-1, 1] interval </td> </tr>
+<tr><td>36	</td><td>Time.GravityAccMag.stddev              </td><td>Standard deviation of magnitude of time domain body acceleration</td> <td>Normalized to the [-1, 1] interval </td> </tr>
+<tr><td>37	</td><td>Time.BodyAccJerkMag.mean               </td><td>Mean magnitude of time domain body jerk</td> <td>Normalized to the [-1, 1] interval </td> </tr>
+<tr><td>38	</td><td>Time.BodyAccJerkMag.stddev             </td><td>Standard deviation of magnitude of time domain body jerk</td> <td>Normalized to the [-1, 1] interval </td> </tr>
+<tr><td>39	</td><td>Time.BodyGyroMag.mean                  </td><td>Mean magnitude of time domain angular velocity</td> <td>Normalized to the [-1, 1] interval </td> </tr>
+<tr><td>40	</td><td>Time.BodyGyroMag.stddev                </td><td>Standard deviation of magnitude of time domain angular velocity</td> <td>Normalized to the [-1, 1] interval </td> </tr>
+<tr><td>41	</td><td>Time.BodyGyroJerkMag.mean              </td><td>Mean magnitude of time domain angular jerk</td> <td>Normalized to the [-1, 1] interval </td> </tr>
+<tr><td>42	</td><td>Time.BodyGyroJerkMag.stddev            </td><td>Standard deviation of magnitude of time domain angular jerk</td> <td>Normalized to the [-1, 1] interval </td> </tr>
+<tr><td>43	</td><td>Freq.BodyAcc.mean.X                    </td><td>Mean frequency domain body acceleration - x coordinate</td> <td>Normalized to the [-1, 1] interval </td> </tr>
+<tr><td>44	</td><td>Freq.BodyAcc.mean.Y                    </td><td>Mean frequency domain body acceleration - y coordinate</td> <td>Normalized to the [-1, 1] interval </td> </tr>
+<tr><td>45	</td><td>Freq.BodyAcc.mean.Z                    </td><td>Mean frequency domain body acceleration - z coordinate</td> <td>Normalized to the [-1, 1] interval </td> </tr>
+<tr><td>46	</td><td>Freq.BodyAcc.stddev.X                  </td><td>Standard deviation of frequency domain body acceleration - x coordinate</td> <td>Normalized to the [-1, 1] interval </td> </tr>
+<tr><td>47	</td><td>Freq.BodyAcc.stddev.Y                  </td><td>Standard deviation of frequency domain body acceleration - y coordinate</td> <td>Normalized to the [-1, 1] interval </td> </tr>
+<tr><td>48	</td><td>Freq.BodyAcc.stddev.Z                  </td><td>Standard deviation of frequency domain body acceleration - z coordinate</td> <td>Normalized to the [-1, 1] interval </td> </tr>
+<tr><td>49	</td><td>Freq.BodyAcc.meanFreq.X                </td><td>Weighted average of the frequency components of body acceleration - x coordinate</td> <td>Normalized to the [-1, 1] interval </td> </tr>
+<tr><td>50	</td><td>Freq.BodyAcc.meanFreq.Y                </td><td>Weighted average of the frequency components of body acceleration - y coordinate</td> <td>Normalized to the [-1, 1] interval </td> </tr>
+<tr><td>51	</td><td>Freq.BodyAcc.meanFreq.Z                </td><td>Weighted average of the frequency components of body acceleration - z coordinate</td> <td>Normalized to the [-1, 1] interval </td> </tr>
+<tr><td>52	</td><td>Freq.BodyAccJerk.mean.X                </td><td>Mean frequency domain body jerk - x coordinate</td> <td>Normalized to the [-1, 1] interval </td> </tr>
+<tr><td>53	</td><td>Freq.BodyAccJerk.mean.Y                </td><td>Mean frequency domain body jerk - y coordinate</td> <td>Normalized to the [-1, 1] interval </td> </tr>
+<tr><td>54	</td><td>Freq.BodyAccJerk.mean.Z                </td><td>Mean frequency domain body jerk - z coordinate</td> <td>Normalized to the [-1, 1] interval </td> </tr>
+<tr><td>55	</td><td>Freq.BodyAccJerk.stddev.X              </td><td>Standard deviation of frequency domain body jerk - x coordinate</td> <td>Normalized to the [-1, 1] interval </td> </tr>
+<tr><td>56	</td><td>Freq.BodyAccJerk.stddev.Y              </td><td>Standard deviation of frequency domain body jerk - y coordinate</td> <td>Normalized to the [-1, 1] interval </td> </tr>
+<tr><td>57	</td><td>Freq.BodyAccJerk.stddev.Z              </td><td>Standard deviation of frequency domain body jerk - z coordinate</td> <td>Normalized to the [-1, 1] interval </td> </tr>
+<tr><td>58	</td><td>Freq.BodyAccJerk.meanFreq.X            </td><td>Weighted average of the frequency components of body jerk - x coordinate</td> <td>Normalized to the [-1, 1] interval </td> </tr>
+<tr><td>59	</td><td>Freq.BodyAccJerk.meanFreq.Y            </td><td>Weighted average of the frequency components of body jerk - y coordinate</td> <td>Normalized to the [-1, 1] interval </td> </tr>
+<tr><td>60	</td><td>Freq.BodyAccJerk.meanFreq.Z            </td><td>Weighted average of the frequency components of body jerk - z coordinate</td> <td>Normalized to the [-1, 1] interval </td> </tr>
+<tr><td>61	</td><td>Freq.BodyGyro.mean.X                   </td><td>Mean frequency domain angular velocity - x coordinate</td> <td>Normalized to the [-1, 1] interval </td> </tr>
+<tr><td>62	</td><td>Freq.BodyGyro.mean.Y                   </td><td>Mean frequency domain angular velocity - y coordinate</td> <td>Normalized to the [-1, 1] interval </td> </tr>
+<tr><td>63	</td><td>Freq.BodyGyro.mean.Z                   </td><td>Mean frequency domain angular velocity - z coordinate</td> <td>Normalized to the [-1, 1] interval </td> </tr>
+<tr><td>64	</td><td>Freq.BodyGyro.stddev.X                 </td><td>Standard deviation of frequency domain angular velocity - x coordinate</td> <td>Normalized to the [-1, 1] interval </td> </tr>
+<tr><td>65	</td><td>Freq.BodyGyro.stddev.Y                 </td><td>Standard deviation of frequency domain angular velocity - y coordinate</td> <td>Normalized to the [-1, 1] interval </td> </tr>
+<tr><td>66	</td><td>Freq.BodyGyro.stddev.Z                 </td><td>Standard deviation of frequency domain angular velocity - z coordinate</td> <td>Normalized to the [-1, 1] interval </td> </tr>
+<tr><td>67	</td><td>Freq.BodyGyro.meanFreq.X               </td><td>Weighted average of the frequency components of angular velocity - x coordinate</td> <td>Normalized to the [-1, 1] interval </td> </tr>
+<tr><td>68	</td><td>Freq.BodyGyro.meanFreq.Y               </td><td>Weighted average of the frequency components of angular velocity - y coordinate</td> <td>Normalized to the [-1, 1] interval </td> </tr>
+<tr><td>69	</td><td>Freq.BodyGyro.meanFreq.Z               </td><td>Weighted average of the frequency components of angular velocity - z coordinate</td> <td>Normalized to the [-1, 1] interval </td> </tr>
+<tr><td>70	</td><td>Freq.BodyAccMag.mean                   </td><td>Mean magnitude of frequency domain body acceleration</td> <td>Normalized to the [-1, 1] interval </td> </tr>
+<tr><td>71	</td><td>Freq.BodyAccMag.stddev                 </td><td>Standard deviation of magnitude of frequency domain body acceleration</td> <td>Normalized to the [-1, 1] interval </td> </tr>
+<tr><td>72	</td><td>Freq.BodyAccMag.meanFreq               </td><td>Weighted average of the frequency components of body acceleration magnitude</td> <td>Normalized to the [-1, 1] interval </td> </tr>
+<tr><td>73	</td><td>Freq.BodyAccJerkMag.mean               </td><td>Mean magnitude of frequency domain body jerk</td> <td>Normalized to the [-1, 1] interval </td> </tr>
+<tr><td>74	</td><td>Freq.BodyAccJerkMag.stddev             </td><td>Standard deviation of magnitude of frequency domain body jerk</td> <td>Normalized to the [-1, 1] interval </td> </tr>
+<tr><td>75	</td><td>Freq.BodyAccJerkMag.meanFreq           </td><td>Weighted average of the frequency components of body jerk magnitude</td> <td>Normalized to the [-1, 1] interval </td> </tr>
+<tr><td>76	</td><td>Freq.BodyGyroMag.mean                  </td><td>Mean magnitude of frequency domain angular velocity</td> <td>Normalized to the [-1, 1] interval </td> </tr>
+<tr><td>77	</td><td>Freq.BodyGyroMag.stddev                </td><td>Standard deviation of magnitude of frequency domain angular velocity</td> <td>Normalized to the [-1, 1] interval </td> </tr>
+<tr><td>78	</td><td>Freq.BodyGyroMag.meanFreq              </td><td>Weighted average of the frequency components of angular velocity magnitude</td> <td>Normalized to the [-1, 1] interval </td> </tr>
+<tr><td>79	</td><td>Freq.BodyGyroJerkMag.mean              </td><td>Mean magnitude of frequency domain angular jerk</td> <td>Normalized to the [-1, 1] interval </td> </tr>
+<tr><td>80	</td><td>Freq.BodyGyroJerkMag.stddev            </td><td>Standard deviation of magnitude of frequency domain angular jerk</td> <td>Normalized to the [-1, 1] interval </td> </tr>
+<tr><td>81	</td><td>Freq.BodyGyroJerkMag.meanFreq          </td><td>Weighted average of the frequency components of angular jerk magnitude</td> <td>Normalized to the [-1, 1] interval </td> </tr>
+
 </table>
