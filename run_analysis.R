@@ -53,14 +53,14 @@ wanted_features <- features[Type %in% c("mean", "std", "meanFreq"), ]
 
 # Prepare names for the headers of the data set (task #4)
 # e.g. if feature ID = 1 and OriginalName="tBodyAcc-mean()-X" then 
-#  Name="F001.tBodyAcc.mean.X".
-# The feature ID is inserted in the name so it's easier to trace it
-# back to the original data set.
-wanted_features$HeaderName <- paste("F", 
-                                    str_pad(string=wanted_features$ID, width=3, pad="0"),
-                                    '.',
-                                    make.names(str_replace(wanted_features$OriginalName, "\\(\\)", "")),
-                                    sep="")
+#  Name="Time.BodyAcc.mean.X".
+# I didn't replace other abbreviations, e.g. Acc -> Acceleration, because
+# the label lengths become unwieldy.
+wanted_features$HeaderName <- make.names(str_replace(wanted_features$OriginalName, "\\(\\)", ""))
+wanted_features$HeaderName <- sub("^t", "Time.",  wanted_features$HeaderName)
+wanted_features$HeaderName <- sub("^f", "Freq.",  wanted_features$HeaderName)
+wanted_features$HeaderName <- sub("BodyBody", "Body",  wanted_features$HeaderName)
+wanted_features$HeaderName <- sub("std", "stddev",  wanted_features$HeaderName)
 
 ##### Load activities labels
 # Needed for TASK #3 (Use descriptive activity names to name the activities 
@@ -124,6 +124,7 @@ for (pattern in c("train", "test")) {
     # concatenate the columns with subjects, activities, means + std.devs to
     # obtain one data set
     X_temp <- cbind(subjects_temp, activities_temp[,.(Activity)], X_temp)
+    
     # add the rows of X_temp to the data set "X" that aggregates train and test data
     X <- rbindlist(list(X, X_temp))
 }
@@ -139,7 +140,7 @@ X_mean <- dcast(data=X_melted,
                 fun=mean)
 
 # Write tidy data to "tidydata_means.txt" file. It can be read back into R with
-# the command: data <- read.table("tidydata_means.txt", header=TRUE)
+# the command: mydata <- read.table("tidydata_with_means.txt", header=TRUE)
 write.table(x=X_mean,
             file="tidydata_with_means.txt",
             row.name=FALSE)
