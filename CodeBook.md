@@ -84,7 +84,7 @@ The variables 3-81 are averages computed for the combination of subject + activi
 <table>
  <tr>
   <td><b>ID</b></td>
-  <td><b>Name</b></td>
+  <td><b>Label</b></td>
   <td><b>Description</b></td>
   <td><b>Range of Values</b></td>
  </tr>

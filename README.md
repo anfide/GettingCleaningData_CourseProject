@@ -63,7 +63,7 @@ Quoted verbatim from the original project documentation:
 
 ## analysis.R script description
 
-The script manipulates these files, contained in the "UCI HAR Dataset" folder of the provided data set:
+The script manipulates these files contained in the "UCI HAR Dataset" folder of the provided data set:
 
 * train/X_train.txt, training data set with the 561 variables listed in features.txt
 * train/y_train.txt, numeric activity IDs in the range 1-6. y_train.txt has one row for each row in X_train.txt
@@ -84,14 +84,25 @@ The following tasks must be completed by the script:
 
 The data set at the end of step 4 is built with a juxtaposition of the starting data files. See the very good picture provided by TA David Hood in the forum post https://class.coursera.org/getdata-016/forum/thread?thread_id=50#comment-333
 
-The scripts operates as follows. The data.table library is used for data manipulation:
+The scripts operates as follows:
 * downloads and unzips the starting data set, if it's not already present in the working directory
-* loads features.txt in a data.table. Filters the features containing a mean or a standard deviation, with are assumed to be those with a name of the form <i>XXXX</i> + one of "mean"/"std"/"meanFreq" + <i>(function parameters)</i>. These are needed for task #2
-* builds better features names (for task #4) using make.names() and some regular expression substitutions
-* loads activity_labels.txt in a data.table, used to set the activity labels in the clean data set (task #3)
-* loads in turn the train*.txt and test*.txt data sets. the X_*.txt data.tables are filtered to keep only the mean/standard deviation features (task #2); variable headers are changed to those obtained above (task #4); activity IDS are converted to their labels (task #3); finally the data.tables read from the files X*.txt, y*.txt, subject_*.txt are pasted together using cbind().
-* at this point there is an X data.table containing the variables: subject ID; activity label; 79 variables with mean or standard deviation features. To perform task #5, X goes through the melt() and dcast() functions. In the melt() call, subject ID and activity label go in the id.vars parameter; all the other variables are "melted" to convert the data set to "long" form. The dcast() call processes the melted data, converting it back to "wide" form and applying the mean() function to all the features except subject id and activity label.
-* the output file is written using the write.table() function. It can be read back into R with a call like 
+* loads features.txt in a data.table named features. 
+* loads a data table named wanted_features with just the features containing a mean or a standard deviation (which are assumed to be those with a name of the form <i>XXXX</i> + one of "mean"/"std"/"meanFreq" + <i>(function parameters)</i>). The wanted_features data.table is used later for tasks #2 and #4
+* changes the variable names in wanted_features, using make.names() and some regular expression substitutions (task #4)
+* loads activity_labels.txt in a data.table named activity_labels. It will be used to set the activity labels in the clean data set (task #3)
+* loads in turn the train and test data sets, one at a time. The following describes the processing of the train data set, it's the same for the test data set
+* the X_train.txt file is read in a data.table named X_temp
+* X_temp is filtered using the wanted_features data.table, to keep only the mean/standard deviation variables (task #2)
+* variable headers of X_temp are changed to those of wanted_features (task #4)
+* the y_train.txt file is loaded in a data.table named activities_temp
+* adds to activities_temp a new variable with the activity labels, taken from the activity_labels data.table (for task #3)
+* the subject_train.txt file is loaded in a data.table named subjects_temp
+* the subjects_temp, activities_temp, X_temp data.tables are pasted together using cbind(), the result goes into X_temp.
+* the rows in X_temp are added to a data.table named X that will put together the train and test data sets
+* repeat the above steps for the test data set (and at this point tasks 1-2-3-4 are completed)
+* the final X data.table has 81 variables: subject ID; activity label; 79 variables with mean and standard deviation features
+* To perform task #5, X goes through the melt() and dcast() functions. In the melt() call, only subject ID and activity label are passed in the id.vars parameter; all the other variables are "melted" to convert the data set to "long" form. The dcast() call processes the melted data, converting it back to "wide" form and applying the mean() function to all the features except subject id and activity label.
+* the X_mean output of melt+dcast is written to file using the write.table() function. It can be read back into R using read.table(), like this:
 
 <pre><code>
   mydata = read.table("tidydata_with_means.txt", header=TRUE)
