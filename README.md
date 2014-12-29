@@ -61,7 +61,7 @@ Quoted verbatim from the original project documentation:
 > - Features are normalized and bounded within [-1,1].
 > - Each feature vector is a row on the text file.
 
-## analysis.R script description
+## run_analysis.R script description
 
 The script manipulates these files contained in the "UCI HAR Dataset" folder of the provided data set:
 
@@ -84,7 +84,7 @@ The following tasks must be completed by the script:
 
 The data set at the end of step 4 is built with a juxtaposition of the starting data files. See the very good picture provided by TA David Hood in the forum post https://class.coursera.org/getdata-016/forum/thread?thread_id=50#comment-333
 
-The scripts operates as follows:
+The script operates as follows:
 * downloads and unzips the starting data set, if it's not already present in the working directory
 * loads features.txt in a data.table named features. 
 * loads a data table named wanted_features with just the features containing a mean or a standard deviation (which are assumed to be those with a name of the form <i>XXXX</i> + one of "mean"/"std"/"meanFreq" + <i>(function parameters)</i>). The wanted_features data.table is used later for tasks #2 and #4

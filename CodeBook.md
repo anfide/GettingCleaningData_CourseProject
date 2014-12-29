@@ -124,7 +124,7 @@ The variables 3-81 are averages computed for the combination of subject + activi
 <tr><td>33	</td><td>Time.BodyAccMag.mean                   </td><td>Mean magnitude of time domain body acceleration</td> <td>Normalized to the [-1, 1] interval </td> </tr>
 <tr><td>34	</td><td>Time.BodyAccMag.stddev                 </td><td>Standard deviation of magnitude of time domain body acceleration</td> <td>Normalized to the [-1, 1] interval </td> </tr>
 <tr><td>35	</td><td>Time.GravityAccMag.mean                </td><td>Mean magnitude of time domain gravity acceleration</td> <td>Normalized to the [-1, 1] interval </td> </tr>
-<tr><td>36	</td><td>Time.GravityAccMag.stddev              </td><td>Standard deviation of magnitude of time domain body acceleration</td> <td>Normalized to the [-1, 1] interval </td> </tr>
+<tr><td>36	</td><td>Time.GravityAccMag.stddev              </td><td>Standard deviation of magnitude of time domain gravity acceleration</td> <td>Normalized to the [-1, 1] interval </td> </tr>
 <tr><td>37	</td><td>Time.BodyAccJerkMag.mean               </td><td>Mean magnitude of time domain body jerk</td> <td>Normalized to the [-1, 1] interval </td> </tr>
 <tr><td>38	</td><td>Time.BodyAccJerkMag.stddev             </td><td>Standard deviation of magnitude of time domain body jerk</td> <td>Normalized to the [-1, 1] interval </td> </tr>
 <tr><td>39	</td><td>Time.BodyGyroMag.mean                  </td><td>Mean magnitude of time domain angular velocity</td> <td>Normalized to the [-1, 1] interval </td> </tr>
